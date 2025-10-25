@@ -1,0 +1,554 @@
+[
+  {
+    "type": "constructor",
+    "inputs": [
+      {
+        "name": "_market",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_poolManager",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getActiveMarkets",
+    "inputs": [
+      {
+        "name": "limit",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "offset",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "markets",
+        "type": "tuple[]",
+        "internalType": "struct MarketView.MarketInfo[]",
+        "components": [
+          {
+            "name": "marketId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "marketToken",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "minDeposit",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "deadline",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "resolver",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "status",
+            "type": "uint8",
+            "internalType": "enum MarketStatus"
+          },
+          {
+            "name": "totalDeposits",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "proposalCount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "timeRemaining",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "canGraduate",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getLeaderboard",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "limit",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "topProposals",
+        "type": "tuple[]",
+        "internalType": "struct MarketView.ProposalInfo[]",
+        "components": [
+          {
+            "name": "proposalId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "marketId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "creator",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "depositAmount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "createdAt",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "yesToken",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "noToken",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "yesPrice",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "noPrice",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "yesLiquidity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "noLiquidity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isAccepted",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getMarketInfo",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "info",
+        "type": "tuple",
+        "internalType": "struct MarketView.MarketInfo",
+        "components": [
+          {
+            "name": "marketId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "marketToken",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "minDeposit",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "deadline",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "resolver",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "status",
+            "type": "uint8",
+            "internalType": "enum MarketStatus"
+          },
+          {
+            "name": "totalDeposits",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "proposalCount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "timeRemaining",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "canGraduate",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getMarketProposals",
+    "inputs": [
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "limit",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "offset",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "proposals",
+        "type": "tuple[]",
+        "internalType": "struct MarketView.ProposalInfo[]",
+        "components": [
+          {
+            "name": "proposalId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "marketId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "creator",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "depositAmount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "createdAt",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "yesToken",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "noToken",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "yesPrice",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "noPrice",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "yesLiquidity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "noLiquidity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isAccepted",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getProposalInfo",
+    "inputs": [
+      {
+        "name": "proposalId",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "info",
+        "type": "tuple",
+        "internalType": "struct MarketView.ProposalInfo",
+        "components": [
+          {
+            "name": "proposalId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "marketId",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "creator",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "internalType": "string"
+          },
+          {
+            "name": "depositAmount",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "createdAt",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "yesToken",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "noToken",
+            "type": "address",
+            "internalType": "address"
+          },
+          {
+            "name": "yesPrice",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "noPrice",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "yesLiquidity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "noLiquidity",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "isAccepted",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getUserPosition",
+    "inputs": [
+      {
+        "name": "proposalId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "marketId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "user",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "position",
+        "type": "tuple",
+        "internalType": "struct MarketView.UserPosition",
+        "components": [
+          {
+            "name": "marketDeposit",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "yesBalance",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "noBalance",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "qusdBalance",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "potentialWinnings",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "canRedeem",
+            "type": "bool",
+            "internalType": "bool"
+          }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "market",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract MarketV2"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "poolManager",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract IPoolManager"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "quoteSwap",
+    "inputs": [
+      {
+        "name": "proposalId",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "buyYes",
+        "type": "bool",
+        "internalType": "bool"
+      },
+      {
+        "name": "amountIn",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "amountOut",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  }
+]

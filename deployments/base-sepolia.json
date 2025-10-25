@@ -1,0 +1,26 @@
+{
+  "network": "base-sepolia",
+  "chainId": 84532,
+  "timestamp": "2025-10-25T09:45:00Z",
+  "deployer": "0x89fEdB2167197199Fd069122e5351A1C779F91B8",
+  "contracts": {
+    "market": "0xa4Fc3e9739a2d991fDC4565607FEAb8A4ca1DDd8",
+    "qusd": "0x2c6E9a46db09a9bB8756375B1a98161182a6DeCe",
+    "tokenFactory": "0x70894B11caB80ADa3df2DAb918990C3Ec3F1180F",
+    "resolver": "0xfc6669763949938f76a47003b2f0C7a5f4587Cf0",
+    "marketView": "0x54e985AA34F6C95cF3Cc0fbe15FAA16A4eb24174",
+    "poolManager": "0x05E73354cFDd6745C338b50BcFDfA3Aa6fA03408",
+    "positionManager": "0x4b2c77d209d3405f41a037ec6c77f7f5b8e2ca80"
+  },
+  "uniswapV4": {
+    "poolManager": "0x05E73354cFDd6745C338b50BcFDfA3Aa6fA03408",
+    "positionManager": "0x4b2c77d209d3405f41a037ec6c77f7f5b8e2ca80",
+    "universalRouter": "0x492e6456d9528771018deb9e87ef7750ef184104",
+    "stateView": "0x571291b572ed32ce6751a2cb2486ebee8defb9b4",
+    "quoter": "0x4a6513c898fe1b2d0e78d3b0e0a4a151589b1cba",
+    "permit2": "0x000000000022D473030F116dDEE9F6B43aC78BA3"
+  },
+  "explorers": {
+    "basescan": "https://sepolia.basescan.org/"
+  }
+}
